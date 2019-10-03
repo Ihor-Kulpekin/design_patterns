@@ -1,4 +1,4 @@
-package com.company.decorator;
+package com.company.decorator.fileDecorator;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

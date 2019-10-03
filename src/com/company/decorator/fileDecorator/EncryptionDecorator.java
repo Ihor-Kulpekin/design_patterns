@@ -1,7 +1,4 @@
-package com.company.decorator;
-
-import com.company.decorator.DataSource;
-import com.company.decorator.DataSourceDecorator;
+package com.company.decorator.fileDecorator;
 
 import java.util.Base64;
 

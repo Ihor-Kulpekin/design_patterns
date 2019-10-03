@@ -1,4 +1,4 @@
-package com.company.decorator;
+package com.company.decorator.fileDecorator;
 
 public interface DataSource {
 

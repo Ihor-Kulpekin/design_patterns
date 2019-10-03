@@ -1,6 +1,4 @@
-package com.company.decorator;
-
-import com.company.decorator.DataSource;
+package com.company.decorator.fileDecorator;
 
 import java.io.*;
 
