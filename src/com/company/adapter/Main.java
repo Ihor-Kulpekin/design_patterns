@@ -1,33 +1,36 @@
 package com.company.adapter;
 
-import com.company.adapter.adapterFigures.implementation.SquarePegAdapter;
-import com.company.adapter.figures.RoundHole;
-import com.company.adapter.figures.RoundPeg;
-import com.company.adapter.figures.SquarePeg;
+
+import com.company.adapter.adapter.DuckAdapter;
+import com.company.adapter.adapter.TurkeyAdapter;
+import com.company.adapter.bird.Duck;
+import com.company.adapter.bird.Turkey;
+import com.company.adapter.implementationsBirds.MallardDuck;
+import com.company.adapter.implementationsBirds.WildTurkey;
 
 public class Main {
     public static void main(String[] args) {
-        RoundHole hole = new RoundHole(5);
-        RoundPeg rpeg = new RoundPeg(5);
+        Duck duck = new MallardDuck();
+        Turkey turkey = new WildTurkey();
+        Duck adapterTurkey = new TurkeyAdapter(turkey);
+        Turkey adapterDuck = new DuckAdapter(duck);
 
-        if(hole.fits(rpeg)){
-            System.out.println("Round peg r5 fits round hole r5.");
-        }
+        System.out.println("The Turkey says. . .");
+        turkey.gobble();
+        turkey.fly();
 
-        SquarePeg smallPeg = new SquarePeg(2);
-        SquarePeg largePeg = new SquarePeg(20);
+        System.out.println("The Duck says");
+        duck.fly();
+        duck.quack();
 
-        SquarePegAdapter smallPegAdapter = new SquarePegAdapter(smallPeg);
-        SquarePegAdapter largeSqPegAdapter = new SquarePegAdapter(largePeg);
-        if (hole.fits(smallPegAdapter)) {
-            System.out.println("Square peg w2 fits round hole r5.");
-        }
-        if (!hole.fits(largeSqPegAdapter)) {
-            System.out.println("Square peg w20 does not fit into round hole r5.");
-        }
+        System.out.println("The Turkey Adapter says");
 
+        adapterTurkey.quack();
+        adapterTurkey.fly();
 
+        System.out.println("The Duck Adapter says");
 
-
+        adapterDuck.fly();
+        adapterDuck.gobble();
     }
 }
